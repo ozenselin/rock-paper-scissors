@@ -11,20 +11,72 @@
             padding: 0;
         }
         body{
+            font-family: 'Times New Roman', Times, serif;
             width: 100vw;
             height: 100vh;
             font-size: 18px;
         }
+        /*title font*/
+        @font-face {
+            font-family: 'SpongebobFont';
+            src: url('/assets/fonts/spongebob.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /*message board font*/
+        @font-face {
+            font-family: 'Tiny5';
+            src: url('/assets/fonts/Tiny5-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
         .start-screen{
             width: 100vw;
             height: 100vh;
+            margin: auto 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
         }
         .start-screen-image{
-            width: auto;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
             height: 100vh;
+            width: auto;
+            z-index: -9999;
+        }
+        .titles {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-family: 'SpongebobFont', sans-serif;
+            color: orange;
+        }
+        .titles h1{
+            font-size: 86px;
+            -webkit-text-stroke: 2px black;
+            width: min-content;
+
+        }
+        .titles h2{
+            min-width: max-content;
+            -webkit-text-stroke: 1.25px black;
+            font-size: 36px;
         }
 
-        /*footer*/
+        .play-image{
+            width: 175px;
+        }
+        .hidden{
+            display: none;
+        }
         .footer{
             background-color: black;
             position: fixed;
@@ -46,7 +98,10 @@
             text-decoration: none;
             color: white;
         }
-
+        .play-button{
+            background-color: transparent;
+            border: transparent;
+        }
         .hidden{
             display: none;
         }
@@ -65,8 +120,8 @@
         </div>
 
         <!-- Play Button -->
-        <button class="start-button">
-            <img class="start-screen-image" src="assets/play-button.png" alt="Start the Game" width="200px">
+        <button class="play-button">
+            <img class="play-image" src="assets/play-button.png" alt="Start the Game" width="200px">
         </button>
     </div>
 
