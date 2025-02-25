@@ -6,7 +6,81 @@
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
+    <div class="start-screen">
+        <!-- Background -->
+        <img class="start-screen-image"src="assets/backgrounds/pineapple-house.webp" alt="SpongeBob's Pineapple House" class="start-screen__image">
+
+        <!-- Name of the show and game -->
+        <div class="titles">
+            <h1 class="start-screen-title">SpongeBob Squarepants</h1>
+            <h2 class="start-screen-subtitle">Rock, Paper & Scissors</h2>
+        </div>
+
+        <!-- Play Button -->
+        <button class="start-button">
+            <img class="start-screen-image" src="assets/play-button.png" alt="Start the Game" width="200px">
+        </button>
+    </div>
+
+    <!-- When play button is pressed -->
+    <div class="console">
+        <!-- Console Image -->
+        <img class="console-image" src="assets/console.png" alt="Blue Game Console">
+
+        <!-- Control Buttons of Console -->
+        <div class="controls">
+            <button class="console-button-restart">r</button>
+            <button class="console-button-toggle">s</button>
+            <button class="console-button-info">i</button>
+            <button class="console-button-power">p</button>
+        </div>
+
+
+        <!-- Left Most Selection Buttons of Console -->
+        <div class="dpad">
+            <button class="button-rope">
+                <img class="image-rope" src="assets/selections/rope.png" alt="SpongeBob Rope">
+            </button> 
+            <button class="button-spatula">
+                <img class="image-spatula" src="assets/selections/spatula.png" alt="SpongeBob Gray Spatula">
+            </button>
+            <button class="button-jellyfish">
+                <img class="image-jellyfish" src="assets/selections/jellyfish.png" alt="SpongeBob Pink Jellyfish">
+            </button>
+            <button class="button-character">
+                <img class="image-character" src="assets/characters/spongebob.png" alt="SpongeBob Pixel Art">
+            </button>
+        </div>
+        
+        <!-- Battle Scene with an Information Board -->
+        <div class="console-screen">
+            <!-- Battle Scene -->
+            <img class="console-screen-image" src="assets/backgrounds/krusty-crab.png" alt="Console Screen" width="600px">
+
+            <!-- Scores of User and Computer -->
+            <div class="score--user">
+                <span id="score-user">1</span>
+            </div>
+            <div class="score-computer">
+                <span id="score-computer">2</span>
+            </div>
+            
+            <!-- Informative Messages Board -->
+            <div class="console-message-board">
+                <!-- Here goes text messages to inform the user -->
+            </div>
+        </div>
+    </div>
+
     
+    <!-- Copyright & GitHub Account -->
+    <div class="footer">
+        <p class="footer-copyright">Copyright © 2025</p>
+        <a class="footer-link" href="https://github.com/ozenselin">
+            <img class="footer-image" src="assets/github-logo.png" alt="GitHub Logo">
+            @ozenselin
+        </a>
+    </div>
 </body>
     <script>
         //define minimum score to win
@@ -231,7 +305,7 @@
         }
 
         //play 5 rounds
-        playGame();
+        // playGame();
 
     </script>
 </html>
