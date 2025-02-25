@@ -4,6 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
+    <style>
+        *, *::before, *::after{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            font-size: 18px;
+        }
+        .start-screen{
+            width: 100vw;
+            height: 100vh;
+        }
+        .start-screen-image{
+            width: auto;
+            height: 100vh;
+        }
+
+        /*footer*/
+        .footer{
+            background-color: black;
+            position: fixed;
+            padding: 12px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            text-align: center;
+            
+        }
+        .footer > *{
+            color: white;
+        }
+        .github-logo{
+            width: 18px;
+            height: auto;
+        }
+        .footer-link{
+            text-decoration: none;
+            color: white;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+    </style>
 </head>
 <body>
     <div class="start-screen">
@@ -23,7 +71,7 @@
     </div>
 
     <!-- When play button is pressed -->
-    <div class="console">
+    <div class="console hidden">
         <!-- Console Image -->
         <img class="console-image" src="assets/console.png" alt="Blue Game Console">
 
@@ -75,12 +123,13 @@
     
     <!-- Copyright & GitHub Account -->
     <div class="footer">
-        <p class="footer-copyright">Copyright © 2025</p>
+        <span id="footer-copyright">Copyright © 2025</span>
         <a class="footer-link" href="https://github.com/ozenselin">
-            <img class="footer-image" src="assets/github-logo.png" alt="GitHub Logo">
+            <img class="github-logo" src="assets/github-logo.png" alt="GitHub Logo">
             @ozenselin
         </a>
     </div>
+
 </body>
     <script>
         //define minimum score to win
