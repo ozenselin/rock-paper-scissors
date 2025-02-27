@@ -4,256 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
-    <style>
-        *, *::before, *::after{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html, body{
-            height: 100%;
-            width: 100%;
-        }
-        body{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: rgb(250, 231, 64);
-            justify-content: center;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 18px;
-        }
-        /*title font*/
-        @font-face {
-            font-family: 'SpongebobFont';
-            src: url('/assets/fonts/spongebob.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        /*message board font*/
-        @font-face {
-            font-family: 'Tiny5';
-            src: url('/assets/fonts/Tiny5-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        .start-screen{
-            background-color: black;
-            z-index: 10;
-            width: 100vw;
-            height: 100vh;
-            margin: auto 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 100px;
-
-        }
-        .start-screen-image{
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            height: 100vh;
-            width: auto;
-            z-index: 0;
-        }
-        .titles {
-            z-index: 11;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            font-family: 'SpongebobFont', sans-serif;
-            color: orange;
-        }
-        .titles h1{
-            padding: 20px;
-            font-size: 86px;
-            -webkit-text-stroke: 2px black;
-            width: min-content;
-
-        }
-        .titles h2{
-            min-width: max-content;
-            -webkit-text-stroke: 1.25px black;
-            font-size: 36px;
-        }
-
-        .play-image{
-            width: 175px;
-        }
-        .hidden{
-            display: none;
-        }
-        .footer{
-            background-color: black;
-            position: fixed;
-            padding: 12px;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            text-align: center;
-            
-        }
-        .footer > *{
-            color: white;
-        }
-        .github-logo{
-            width: 18px;
-            height: auto;
-        }
-        .footer-link{
-            text-decoration: none;
-            color: white;
-        }
-        .play-button{
-            background-color: transparent;
-            border: transparent;
-            display: inline-block;
-            visibility: visible;
-            position: relative;
-            z-index: 9999;
-        }
-        .hidden{
-            display: none;
-        }
-
-        .console-container{
-            font-family: "Tiny5",sans-serif;
-            position: relative;
-            width: 864px;;
-            height: 504px;
-            flex-grow: 0;
-        }
-        
-        .console-image{
-            width: 100%;
-            height: 100%;
-        }
-
-        .console-screen{
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 41%;
-        }
-        .console-message-board{
-            position: absolute;
-            top: 70%;
-            left: 49.8%;
-            height: 16%;
-            width: 41.5%;
-            transform: translate(-50%, -50%);
-            background-color: rgb(45, 45, 45);
-            border: 3px solid black;
-        }
-
-        .control-button{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            background-color: black;
-            color: white;
-            width: 4%; 
-            height: 6.5%;
-        }
-        .button-sound{
-            top: 29%;
-            right: 9.5%;
-        }
-        .button-info{
-            top: 39.5%;
-            right: 17.60%;
-        }
-        .button-power{
-            bottom: 29%;
-            left: 17.60%;
-        }
-        .button-restart{
-            bottom: 19%;
-            left: 17.60%;
-        }
-        button{
-            background-color: transparent;
-        }
-        .dpad-button{
-            /* display: flex;
-            align-items: center;
-            justify-content: center; */
-            background-color: black;
-            position: absolute;
-            width: 5%;
-            height: auto;
-            & > img{
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .button-character{
-            left: 17.60%;
-            top: 36%;
-        }
-
-        .button-rope{
-            left: 13.25%;
-            top: 29%;
-        }
-
-        .button-spatula{
-            left: 9%;
-            top: 36%;
-        }
-
-        .button-jellyfish{
-            left: 13.25%;
-            top: 43%;
-        }
-
-        .score{
-            position: absolute;
-            border: 3px solid black;
-            background-color: orange;
-            width: 4%;
-            height: 7%;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .score-user{
-            left: 30%;
-            bottom: 39%;
-        }
-        .score-computer{
-            right: 30%;
-            bottom: 39%;
-        }
-
-        .user-character{
-            position: absolute;
-            width: 8%;
-            height: auto;
-            left: 36%;
-            bottom: 40%;
-        }
-
-        .computer-character{
-            position: absolute;
-            right: 35%;
-            bottom: 42%;
-            width: 7%;
-            height: auto;
-        }
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="start-screen">
@@ -279,18 +30,20 @@
         
         <!-- Control Buttons of Console -->
         <button class="control-button button-restart">r</button>
-        <button class="control-button button-sound">s</button>
+        <button class="control-button button-sound">
+            <img src="assets/icons/sound-on.svg" alt="Sound Icon" width="30px">
+        </button>
         <button class="control-button button-info">i</button>
         <button class="control-button button-power">p</button>
 
         <!-- Left Most Selection Buttons of Console -->
-        <button class="dpad-button button-rope">
+        <button id="rope" class="dpad-button button-rope">
             <img class="image-rope" src="assets/selections/rope.png" alt="SpongeBob Rope">
         </button> 
-        <button class="dpad-button button-spatula">
+        <button id="spatula" class="dpad-button button-spatula">
             <img class="image-spatula" src="assets/selections/spatula.png" alt="SpongeBob Gray Spatula">
         </button>
-        <button class="dpad-button button-jellyfish">
+        <button id="jellyfish" class="dpad-button button-jellyfish">
             <img class="image-jellyfish" src="assets/selections/jellyfish.png" alt="SpongeBob Pink Jellyfish">
         </button>
         <button class="dpad-button button-character">
@@ -308,17 +61,27 @@
 
         <!-- Scores of User and Computer -->
         <div class="score score-user">
-            <span id="score-user">1</span>
+            <span id="score-user">0</span>
         </div>
         <div class="score score-computer">
-            <span id="score-computer">2</span>
+            <span id="score-computer">0</span>
         </div>
 
         <!-- Informative Messages Board -->
         <div class="console-message-board">
             <!-- Here goes text messages to inform the user -->
         </div>
+
+        <!-- Controls the Flow On the Message Board -->
+        <button id="continue">
+            <img src="assets/icons/continue.svg" alt="Continue" width="20px">
+        </button>
     </div>
+
+    <!-- Background Music -->
+    <audio id="game-audio"loop>
+        <source src="assets/sounds/background-music.wav" type="audio/wav">
+    </audio>
 
     <!-- Copyright & GitHub Account -->
     <div class="footer">
@@ -328,243 +91,6 @@
             @ozenselin
         </a>
     </div>
-</div>
-
-    
-
-
-    <script>
-        //define minimum score to win
-        const VICTORY_TRESHOLD = 5;
-        //define available three selections
-        const SELECTION_1 = "rock";
-        const SELECTION_2 = "paper";
-        const SELECTION_3 = "scissors"
-        //define capitals and their values
-        const R = SELECTION_1;
-        const P = SELECTION_2;
-        const S = SELECTION_3;
-
-        //prompt message according to avaliable selections
-        const promptMessage = `${SELECTION_1}-${SELECTION_2}-${SELECTION_3}?`;
-        const promptWarningMessage = `Please enter an eligible selection:`;
-
-        //store first letter capitilazied of selections
-        let selectionCapitals = ["R", "P", "S"];
-
-        //store full name of the selections
-        let selections = [SELECTION_1, SELECTION_2, SELECTION_3];
-
-        //return "" if user selection is falsy (null, undefined, NaN, "")
-        //takes raw user selection and trims & lowers it
-        function sanitizeSelection(userSelection){
-            if(!userSelection) return "";
-            return userSelection.trim().toLocaleLowerCase();
-        }
-
-        //return -1 if not found in the selections or ""
-        //return 0 if rock
-        //       1 if paper
-        //       2 if scissors
-        //takes sanitized selection and returns corresponding index: -1, 0, 1, 2
-        function findSelectionIndex(sanitizedSelection){
-            return (selections.indexOf(sanitizedSelection));
-        }
-
-        //return R if 0
-        //       P if 1
-        //       S if 2
-        //takes selection index as paremeter and returns the corresponding capital: R, P, S
-        function findSelectionCapital(selectionIndex){
-            if(selectionIndex < 0) return "";
-            return selectionCapitals.at(selectionIndex);
-        }
-
-        //creates and returns a selection object from parameters
-        function createSelection(name = "", index = 0, capital = ""){
-            return {
-                name,
-                index,
-                capital,
-            };
-        }
-
-        //prompts for a selection displaying a message
-        //if user selection is eligible returns the selection
-        //else prompts again
-        //then creates and returns selection object
-        function createUserSelection(){
-            let userSelection;
-            let sanitizedSelection;
-            let selectionIndex = -1;
-            while (selectionIndex < 0){
-                userSelection = prompt(promptMessage);
-                sanitizedSelection = sanitizeSelection(userSelection);
-                selectionIndex = findSelectionIndex(sanitizedSelection);
-            }
-            let selectionCapital = findSelectionCapital(selectionIndex);
-            return createSelection(sanitizedSelection, selectionIndex, selectionCapital);
-        }
-        
-        //create a random index
-        //create and return a selection object from that index
-        function createComputerSelection(){
-            //create an index variable: [0,1,2]
-            let index = Math.floor(Math.random() * 3);
-            let name = selections.at(index);
-            let capital = selectionCapitals.at(index);
-            return createSelection(name, index, capital);
-        }
-
-        //takes the user and computer as parameter
-        //returns a message that annouces the winner and the results for just one round
-        function createRoundWinnerMessage(user, computer){
-            let message;
-            switch(user.currentRoundResult){
-                case "win":
-                    message = `${user.selections.at(-1).name} beats ${computer.selections.at(-1).name}\nYou won!`;
-                    break;
-                case "lose":
-                    message = `${computer.selections.at(-1).name} beats ${user.selections.at(-1).name}\nComputer won!`;
-                    break;
-                case "tie":
-                    message = `${user.selections.at(-1).name} ties ${computer.selections.at(-1).name}\nA tie!`;
-                    break;
-                default:
-                    break;
-            }
-            return message;
-        }
-
-        //a player object: name, selections[], currentRoundResult, score
-        //creates and returns a user player
-        function createUser(){
-            return {
-                name: "user",
-                selections: [],
-                currentRoundResult: "",
-                score: 0,
-            };
-        }
-        //creates and returns a computer player
-        function createComputer(){
-            return {
-                name: "computer",
-                selections: [],
-                currentRoundResult: "",
-                score: 0,
-            };
-        }
-
-        //creates and prompts selections for players
-        //updates scores and results accordingly
-        //logs the winner
-        function playRound(user, computer){
-            //create and prompt selections
-            let userSelection = createUserSelection();
-            let computerSelection = createComputerSelection();
-            //add selections to players selection lists
-            user.selections.push(userSelection);
-            computer.selections.push(computerSelection);
-            //update scores and round results accordingly
-            switch(userSelection.name){
-                case R:
-                    switch(computerSelection.name){
-                        case R:
-                            user.currentRoundResult = "tie";
-                            computer.currentRoundResult = "tie";
-                            break;
-                        case P:
-                            user.currentRoundResult = "lose";
-                            computer.currentRoundResult = "win";
-                            computer.score++;
-                            break;
-                        case S:
-                            user.currentRoundResult = "win";
-                            user.score++;
-                            computer.currentRoundResult = "lose";
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case P:
-                    switch(computerSelection.name){
-                        case R:
-                            user.currentRoundResult = "win";
-                            user.score++;
-                            computer.currentRoundResult = "lose";
-                            break;
-                        case P:
-                            user.currentRoundResult = "tie";
-                            computer.currentRoundResult = "tie";
-                            break;
-                        case S:
-                            user.currentRoundResult = "lose";
-                            computer.currentRoundResult = "win";
-                            computer.score++;
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case S:
-                    switch(computerSelection.name){
-                        case R:
-                            user.currentRoundResult = "lose";
-                            computer.currentRoundResult = "win";
-                            computer.score++;
-                            break;
-                        case P:
-                            user.currentRoundResult = "win";
-                            user.score++
-                            computer.currentRoundResult = "lose";
-                            break;
-                        case S:
-                            user.currentRoundResult = "tie";
-                            user.currentRoundResult = "tie";
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                default:
-                    break;
-            }
-            //generate a message to annouce the winner and results
-            let message = createRoundWinnerMessage(user, computer);
-            //log the message
-            console.log(message)
-        }
-        function createGameWinnerMessage(user, computer){
-            let message = (user.score > computer.score) ? "The game is over. You won!" : "The game is over. Computer won!";
-            return message;
-        }
-        function playGame(){
-            //define user and computer
-            let user = createUser();
-            let computer = createComputer();
-            //for 5 rounds
-            while(user.score < VICTORY_TRESHOLD && computer.score < VICTORY_TRESHOLD){
-                playRound(user, computer);
-            }
-            //log scores and announce the winner
-            let message = createGameWinnerMessage(user, computer);
-            let scores = `You: ${user.score}, Computer: ${computer.score}`
-            console.log(scores);
-            console.log(message);
-        }
-
-        const playButton = document.querySelector(".play-button");
-        playButton.addEventListener("click", function(){
-            console.log("clicked");
-            const startScreen = document.querySelector(".start-screen");
-            startScreen.classList.add("hidden");
-            const consoleContainer = document.querySelector(".console-container");
-            consoleContainer.classList.remove("hidden");
-        });
-        //play 5 rounds
-        // playGame();
-
-    </script>
+<script src="javascript.js"></script>
+</body>
 </html>
