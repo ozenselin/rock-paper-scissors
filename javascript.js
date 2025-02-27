@@ -324,27 +324,6 @@ function displayNextMessage(event){
             break;  
     }
 }
-/*WHEN A SELECTION BUTTON PRESSED*/
-/*in the button function, 
-make all buttons disabled again including the button pressed itself
-if user and computer is not depassing the victory treshold
-play round (user, computer)
-- in play round function update createUserSelection function
-- instead of prompting the user forever (remove it)
-- use the button's class or id to get the selection
-- and create a selection object
-- and return it
-- (you can console.log the event to get the propoerty you're looking for. Manipulate the html if needed)
-Play round function sends its ending message itself
-but atfter play round executes:
-if no one is at victory treshold
-make button enabled again
-if someone is at victory treshold 
-don'T make buttons enabled again!
-instead create an game winner message and display it on the message board
-after that, set those object to null to clear the memory(?) user = null, computer = null
-alternetively: make the start-screen faded or opacity: 0.5 and write GAME OVER?
-*/
 
 function toggleSound() {
     isSoundOn = !isSoundOn; // Durumu tersine çevir
