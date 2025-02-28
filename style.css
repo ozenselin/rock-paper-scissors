@@ -204,8 +204,15 @@ button{
     }
 }
 .button-character{
+    background-color: black;
+    position: absolute;
+    width: 5%;
     left: 17.60%;
     top: 36%;
+    & > img{
+        width: 100%;
+        height: auto;
+    }
 }
 
 .button-rope{
@@ -298,3 +305,4 @@ button:disabled {
     border: 3px solid yellow;
     border-radius: 10px;
 }
+
